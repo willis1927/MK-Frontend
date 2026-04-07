@@ -9,6 +9,7 @@ function App() {
   const [genres, setGenres] = useState([])
   const [results, setResults] = useState([])
   const [loading, setLoading] = useState(false)
+  const address = "https://mk-backend-one.vercel.app/"  
   
   const submitSearch = async () => {
     const searchData = {  
@@ -22,7 +23,7 @@ function App() {
     }
     try {
       setLoading(true)
-      const response = await fetch('http://localhost:3000/search', {
+      const response = await fetch(`${address}search`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
